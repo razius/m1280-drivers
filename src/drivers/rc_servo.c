@@ -4,7 +4,7 @@
 @author Silviu Tantos
 @defgroup rc_servo RC Servo
 @{
-    @brief Functions used to initialize and control the RC Servo motor.
+    @brief Initialize and control the RC Servo motor.
 @}
 **/
     
@@ -77,10 +77,9 @@ void init_rc_servo() {
 
 /**
 @ingroup rc_servo
-@brief Moves the arm into a new position.
-	
-Moves the arm into a new position by specifying the degree as a percentage.
-The percentage value can vary between -100 and 100 where -100 is the left
+@brief Moves the arm into a new position by specifying the degree as a percentage.
+
+@param percent The percentage value which vary between -100 and 100 where -100 is the left
 most position, 0 is centered and 100 is the right most position.
 **/
 void rc_servo(int8_t percent){

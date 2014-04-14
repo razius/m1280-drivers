@@ -4,7 +4,7 @@
 @author Silviu Tantos
 @defgroup spi SPI
 @{
-    @brief Driver for communicating using the Serial Peripheral Interface (SPI) bus.
+    @brief Communicate using the Serial Peripheral Interface (SPI) bus.
 @}
 **/
 
@@ -33,6 +33,7 @@ static void(*_callback_function)() = 0;
 @param *callback_function()
     Callback function to be executed when the transfer is complete.\n
     The Global Interrupt Enable bit in SREG must be set.
+@todo Add parameter to be able to change the clock rate.
 **/
 void spi_init(
                 uint8_t mode,

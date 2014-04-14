@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -63,7 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -81,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Functions used to initialize and control the RC Servo motor.  
+<p>Initialize and control the RC Servo motor.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -105,11 +106,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:gad5afd3abc18b3673732542edceb5e6c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the RC-Servo and sets the arm in the middle position.  <a href="#gad5afd3abc18b3673732542edceb5e6c1">More...</a><br/></td></tr>
 <tr class="separator:gad5afd3abc18b3673732542edceb5e6c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9965d379cdb28b35126dcb75adf400c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rc__servo.html#ga9965d379cdb28b35126dcb75adf400c3">rc_servo</a> (int8_t percent)</td></tr>
-<tr class="memdesc:ga9965d379cdb28b35126dcb75adf400c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the arm into a new position.  <a href="#ga9965d379cdb28b35126dcb75adf400c3">More...</a><br/></td></tr>
+<tr class="memdesc:ga9965d379cdb28b35126dcb75adf400c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the arm into a new position by specifying the degree as a percentage.  <a href="#ga9965d379cdb28b35126dcb75adf400c3">More...</a><br/></td></tr>
 <tr class="separator:ga9965d379cdb28b35126dcb75adf400c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Functions used to initialize and control the RC Servo motor. </p>
+<p>Initialize and control the RC Servo motor. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="gad5afd3abc18b3673732542edceb5e6c1"></a>
 <div class="memitem">
@@ -143,15 +144,20 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Moves the arm into a new position. </p>
-<p>Moves the arm into a new position by specifying the degree as a percentage. The percentage value can vary between -100 and 100 where -100 is the left most position, 0 is centered and 100 is the right most position. </p>
+<p>Moves the arm into a new position by specifying the degree as a percentage. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">percent</td><td>The percentage value which vary between -100 and 100 where -100 is the left most position, 0 is centered and 100 is the right most position. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 14 2014 14:44:18 for M1280 Drivers by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 14 2014 15:37:27 for M1280 Drivers by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

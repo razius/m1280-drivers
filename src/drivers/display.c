@@ -4,7 +4,7 @@
 @author Silviu Tantos
 @defgroup display 7 Segment Display
 @{
-    @brief Functions used to initialize and display values on the 7 segment display.
+    @brief Initialize and display values on the 7 segment display.
 @}
 **/
 
@@ -57,6 +57,7 @@ void display_init(){
 
 @param value_to_display The value to display on the 7 segment display. If the value has more than 4 digits it will be truncated.
 @param numbers_of_decimals The number of decimals to be displayed.
+@todo Figure out a way to indicate an overflow.
 **/
 void display_value(float value_to_display, uint8_t numbers_of_decimals){
     uint16_t pow_ten[] = {1, 10, 100, 1000, 10000};
