@@ -1,0 +1,59 @@
+\hypertarget{group__rc__servo}{\section{R\-C Servo}
+\label{group__rc__servo}\index{R\-C Servo@{R\-C Servo}}
+}
+
+
+Functions used to initialize and control the R\-C Servo motor.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__rc__servo_ga0eb250599505bd3600d26b6bad6a415f}{\#define \hyperlink{group__rc__servo_ga0eb250599505bd3600d26b6bad6a415f}{S\-E\-R\-V\-O\-\_\-\-P\-W\-M\-\_\-\-F\-R\-E\-Q}~203}\label{group__rc__servo_ga0eb250599505bd3600d26b6bad6a415f}
+
+\begin{DoxyCompactList}\small\item\em Value in milliseconds that defines the P\-W\-M pulse frequency for the R\-C Servo motor. This value is typically found in the datasheet. \end{DoxyCompactList}\item 
+\hypertarget{group__rc__servo_ga95ba539b3e71a70655a714c95eb046c0}{\#define \hyperlink{group__rc__servo_ga95ba539b3e71a70655a714c95eb046c0}{S\-E\-R\-V\-O\-\_\-\-P\-W\-M\-\_\-\-W\-I\-D\-T\-H\-\_\-\-M\-I\-N}~0.\-75}\label{group__rc__servo_ga95ba539b3e71a70655a714c95eb046c0}
+
+\begin{DoxyCompactList}\small\item\em Value in milliseconds that defines the minimum P\-W\-M pulse width, this value is used to used to control the the arm of the R\-C Servo motor and is typically found in the datasheet. \end{DoxyCompactList}\item 
+\hypertarget{group__rc__servo_ga547c363d5ea2c04b34b9ed60a1e9325f}{\#define \hyperlink{group__rc__servo_ga547c363d5ea2c04b34b9ed60a1e9325f}{S\-E\-R\-V\-O\-\_\-\-P\-W\-M\-\_\-\-W\-I\-D\-T\-H\-\_\-\-M\-A\-X}~2.\-25}\label{group__rc__servo_ga547c363d5ea2c04b34b9ed60a1e9325f}
+
+\begin{DoxyCompactList}\small\item\em Value in milliseconds that defines the maximum P\-W\-M pulse width, this value is used to used to control the the arm of the R\-C Servo motor and is typically found in the datasheet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__rc__servo_gad5afd3abc18b3673732542edceb5e6c1}{init\-\_\-rc\-\_\-servo} ()
+\begin{DoxyCompactList}\small\item\em Initializes the R\-C-\/\-Servo and sets the arm in the middle position. \end{DoxyCompactList}\item 
+void \hyperlink{group__rc__servo_ga9965d379cdb28b35126dcb75adf400c3}{rc\-\_\-servo} (int8\-\_\-t percent)
+\begin{DoxyCompactList}\small\item\em Moves the arm into a new position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions used to initialize and control the R\-C Servo motor. 
+
+\subsection{Function Documentation}
+\hypertarget{group__rc__servo_gad5afd3abc18b3673732542edceb5e6c1}{\index{R\-C Servo@{R\-C Servo}!init\-\_\-rc\-\_\-servo@{init\-\_\-rc\-\_\-servo}}
+\index{init\-\_\-rc\-\_\-servo@{init\-\_\-rc\-\_\-servo}!RC Servo@{R\-C Servo}}
+\subsubsection[{init\-\_\-rc\-\_\-servo}]{\setlength{\rightskip}{0pt plus 5cm}void init\-\_\-rc\-\_\-servo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group__rc__servo_gad5afd3abc18b3673732542edceb5e6c1}
+
+
+Initializes the R\-C-\/\-Servo and sets the arm in the middle position. 
+
+\begin{DoxyNote}{Note}
+Must be called before any other method can be used. 
+\end{DoxyNote}
+\hypertarget{group__rc__servo_ga9965d379cdb28b35126dcb75adf400c3}{\index{R\-C Servo@{R\-C Servo}!rc\-\_\-servo@{rc\-\_\-servo}}
+\index{rc\-\_\-servo@{rc\-\_\-servo}!RC Servo@{R\-C Servo}}
+\subsubsection[{rc\-\_\-servo}]{\setlength{\rightskip}{0pt plus 5cm}void rc\-\_\-servo (
+\begin{DoxyParamCaption}
+\item[{int8\-\_\-t}]{percent}
+\end{DoxyParamCaption}
+)}}\label{group__rc__servo_ga9965d379cdb28b35126dcb75adf400c3}
+
+
+Moves the arm into a new position. 
+
+Moves the arm into a new position by specifying the degree as a percentage. The percentage value can vary between -\/100 and 100 where -\/100 is the left most position, 0 is centered and 100 is the right most position. 

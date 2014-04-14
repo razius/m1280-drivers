@@ -1,0 +1,34 @@
+\hypertarget{rc__servo_8c}{\section{src/drivers/rc\-\_\-servo.c File Reference}
+\label{rc__servo_8c}\index{src/drivers/rc\-\_\-servo.\-c@{src/drivers/rc\-\_\-servo.\-c}}
+}
+
+
+R\-C Servo Motor Driver.  
+
+
+{\ttfamily \#include \char`\"{}rc\-\_\-servo.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__rc__servo_ga0eb250599505bd3600d26b6bad6a415f}{\#define \hyperlink{group__rc__servo_ga0eb250599505bd3600d26b6bad6a415f}{S\-E\-R\-V\-O\-\_\-\-P\-W\-M\-\_\-\-F\-R\-E\-Q}~20}\label{group__rc__servo_ga0eb250599505bd3600d26b6bad6a415f}
+
+\begin{DoxyCompactList}\small\item\em Value in milliseconds that defines the P\-W\-M pulse frequency for the R\-C Servo motor. This value is typically found in the datasheet. \end{DoxyCompactList}\item 
+\hypertarget{group__rc__servo_ga95ba539b3e71a70655a714c95eb046c0}{\#define \hyperlink{group__rc__servo_ga95ba539b3e71a70655a714c95eb046c0}{S\-E\-R\-V\-O\-\_\-\-P\-W\-M\-\_\-\-W\-I\-D\-T\-H\-\_\-\-M\-I\-N}~0.\-75}\label{group__rc__servo_ga95ba539b3e71a70655a714c95eb046c0}
+
+\begin{DoxyCompactList}\small\item\em Value in milliseconds that defines the minimum P\-W\-M pulse width, this value is used to used to control the the arm of the R\-C Servo motor and is typically found in the datasheet. \end{DoxyCompactList}\item 
+\hypertarget{group__rc__servo_ga547c363d5ea2c04b34b9ed60a1e9325f}{\#define \hyperlink{group__rc__servo_ga547c363d5ea2c04b34b9ed60a1e9325f}{S\-E\-R\-V\-O\-\_\-\-P\-W\-M\-\_\-\-W\-I\-D\-T\-H\-\_\-\-M\-A\-X}~2.\-25}\label{group__rc__servo_ga547c363d5ea2c04b34b9ed60a1e9325f}
+
+\begin{DoxyCompactList}\small\item\em Value in milliseconds that defines the maximum P\-W\-M pulse width, this value is used to used to control the the arm of the R\-C Servo motor and is typically found in the datasheet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__rc__servo_gad5afd3abc18b3673732542edceb5e6c1}{init\-\_\-rc\-\_\-servo} ()
+\begin{DoxyCompactList}\small\item\em Initializes the R\-C-\/\-Servo and sets the arm in the middle position. \end{DoxyCompactList}\item 
+void \hyperlink{group__rc__servo_ga9965d379cdb28b35126dcb75adf400c3}{rc\-\_\-servo} (int8\-\_\-t percent)
+\begin{DoxyCompactList}\small\item\em Moves the arm into a new position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\-C Servo Motor Driver. \begin{DoxyAuthor}{Author}
+Silviu Tantos 
+\end{DoxyAuthor}

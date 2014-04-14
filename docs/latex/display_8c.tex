@@ -1,0 +1,46 @@
+\hypertarget{display_8c}{\section{src/drivers/display.c File Reference}
+\label{display_8c}\index{src/drivers/display.\-c@{src/drivers/display.\-c}}
+}
+
+
+7 Segment Display Driver.  
+
+
+{\ttfamily \#include $<$avr/io.\-h$>$}\\*
+{\ttfamily \#include $<$avr/interrupt.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}drivers/display.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils/bit\-\_\-manipulation.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__display_ga8d41c12af4f6e6faad84e1f21f99b3e1}{display\-\_\-init} ()
+\begin{DoxyCompactList}\small\item\em Initializes the 7 segment display driver. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga1f6fa89014ac69b6b9f73dc0a59f7eef}{display\-\_\-value} (float value\-\_\-to\-\_\-display, uint8\-\_\-t numbers\-\_\-of\-\_\-decimals)
+\begin{DoxyCompactList}\small\item\em Display a value on the 7 segment display. \end{DoxyCompactList}\item 
+\hypertarget{display_8c_add2d7cdddfb682dcc0391e60cf42c7d6}{{\bfseries I\-S\-R} (T\-I\-M\-E\-R0\-\_\-\-O\-V\-F\-\_\-vect)}\label{display_8c_add2d7cdddfb682dcc0391e60cf42c7d6}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{display_8c_a188ec4e1676fa0ca0f6f675d21a246c7}{const uint8\-\_\-t {\bfseries D\-I\-S\-P\-L\-A\-Y} \mbox{[}4\mbox{]} = \{P\-L0, P\-L1, P\-L2, P\-L3\}}\label{display_8c_a188ec4e1676fa0ca0f6f675d21a246c7}
+
+\item 
+\hypertarget{display_8c_a699a23f1d24bce3e6be33f30e5f3d482}{const uint8\-\_\-t {\bfseries D\-I\-G\-I\-T} \mbox{[}10\mbox{]} = \{0x\-F\-C, 0x60, 0x\-D\-A, 0x\-F2, 0x66, 0x\-B6, 0x\-B\-E, 0x\-E0, 0x\-F\-E, 0x\-F6\}}\label{display_8c_a699a23f1d24bce3e6be33f30e5f3d482}
+
+\item 
+\hypertarget{display_8c_a826c470469a5969249d5a8ffabfb48b2}{int8\-\_\-t {\bfseries value\-\_\-by\-\_\-digits} \mbox{[}4\mbox{]} = \{-\/1, -\/1, -\/1, -\/1\}}\label{display_8c_a826c470469a5969249d5a8ffabfb48b2}
+
+\item 
+\hypertarget{display_8c_a754aff69e4760d143a85c10976064659}{uint8\-\_\-t {\bfseries current\-\_\-display} = 0}\label{display_8c_a754aff69e4760d143a85c10976064659}
+
+\item 
+\hypertarget{display_8c_add23e598ee642faaa69668e7dfe2354b}{uint8\-\_\-t {\bfseries previous\-\_\-display} = -\/1}\label{display_8c_add23e598ee642faaa69668e7dfe2354b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+7 Segment Display Driver. \begin{DoxyAuthor}{Author}
+Silviu Tantos 
+\end{DoxyAuthor}
