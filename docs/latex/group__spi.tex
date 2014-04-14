@@ -1,0 +1,100 @@
+\hypertarget{group__spi}{\section{S\-P\-I}
+\label{group__spi}\index{S\-P\-I@{S\-P\-I}}
+}
+
+
+Driver for communicating using the Serial Peripheral Interface (S\-P\-I) bus.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__spi_ga28bc36b326e2cb697ffb6d0ddd3c6263}{\#define \hyperlink{group__spi_ga28bc36b326e2cb697ffb6d0ddd3c6263}{S\-P\-I\-\_\-\-D\-A\-T\-A\-\_\-\-O\-R\-D\-E\-R\-\_\-\-L\-S\-B\-\_\-\-F\-I\-R\-S\-T}~1}\label{group__spi_ga28bc36b326e2cb697ffb6d0ddd3c6263}
+
+\begin{DoxyCompactList}\small\item\em L\-S\-B of the data word is transmitted first. \end{DoxyCompactList}\item 
+\hypertarget{group__spi_ga654a276f377599a8cf352b984843d39c}{\#define \hyperlink{group__spi_ga654a276f377599a8cf352b984843d39c}{S\-P\-I\-\_\-\-D\-A\-T\-A\-\_\-\-O\-R\-D\-E\-R\-\_\-\-M\-S\-B\-\_\-\-F\-I\-R\-S\-T}~0}\label{group__spi_ga654a276f377599a8cf352b984843d39c}
+
+\begin{DoxyCompactList}\small\item\em M\-S\-B of the data word is transmitted first. \end{DoxyCompactList}\item 
+\hypertarget{group__spi_gaa335c2abdfad9e6f6c2677719d93b64e}{\#define \hyperlink{group__spi_gaa335c2abdfad9e6f6c2677719d93b64e}{S\-P\-I\-\_\-\-M\-O\-D\-E\-\_\-\-M\-A\-S\-T\-E\-R}~1}\label{group__spi_gaa335c2abdfad9e6f6c2677719d93b64e}
+
+\begin{DoxyCompactList}\small\item\em Data is always shifted from Master to Slave on the Master Out -\/ Slave In, M\-O\-S\-I, line. \end{DoxyCompactList}\item 
+\hypertarget{group__spi_ga75f094fee5a9dc10b88401ccd17925d3}{\#define \hyperlink{group__spi_ga75f094fee5a9dc10b88401ccd17925d3}{S\-P\-I\-\_\-\-M\-O\-D\-E\-\_\-\-S\-L\-A\-V\-E}~0}\label{group__spi_ga75f094fee5a9dc10b88401ccd17925d3}
+
+\begin{DoxyCompactList}\small\item\em Data is always shifted from Slave to Master on the Master In -\/ Slave Out, M\-I\-S\-O, line. \end{DoxyCompactList}\item 
+\hypertarget{group__spi_ga22bf096e260ed2f6ba648d957e0bc863}{\#define \hyperlink{group__spi_ga22bf096e260ed2f6ba648d957e0bc863}{S\-P\-I\-\_\-\-C\-L\-O\-C\-K\-\_\-\-P\-O\-L\-A\-R\-I\-T\-Y\-\_\-\-H\-I\-G\-H\-\_\-\-W\-H\-E\-N\-\_\-\-I\-D\-L\-E}~1}\label{group__spi_ga22bf096e260ed2f6ba648d957e0bc863}
+
+\begin{DoxyCompactList}\small\item\em S\-C\-K is high when idle. \end{DoxyCompactList}\item 
+\hypertarget{group__spi_ga5d3f3697c507a10a89c4759539b813b0}{\#define \hyperlink{group__spi_ga5d3f3697c507a10a89c4759539b813b0}{S\-P\-I\-\_\-\-C\-L\-O\-C\-K\-\_\-\-P\-O\-L\-A\-R\-I\-T\-Y\-\_\-\-L\-O\-W\-\_\-\-W\-H\-E\-N\-\_\-\-I\-D\-L\-E}~0}\label{group__spi_ga5d3f3697c507a10a89c4759539b813b0}
+
+\begin{DoxyCompactList}\small\item\em S\-C\-K is low when idle. \end{DoxyCompactList}\item 
+\hypertarget{group__spi_gaad532b376369ae3bcaf7fdee20b70dba}{\#define \hyperlink{group__spi_gaad532b376369ae3bcaf7fdee20b70dba}{S\-P\-I\-\_\-\-C\-L\-O\-C\-K\-\_\-\-P\-H\-A\-S\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-L\-E\-A\-D\-I\-N\-G}~0}\label{group__spi_gaad532b376369ae3bcaf7fdee20b70dba}
+
+\begin{DoxyCompactList}\small\item\em Data is sampled on the leading (first) edge of S\-C\-K. \end{DoxyCompactList}\item 
+\hypertarget{group__spi_ga53ba425a33999d91784c3c90c7973344}{\#define \hyperlink{group__spi_ga53ba425a33999d91784c3c90c7973344}{S\-P\-I\-\_\-\-C\-L\-O\-C\-K\-\_\-\-P\-H\-A\-S\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-T\-R\-A\-I\-L\-I\-N\-G}~1}\label{group__spi_ga53ba425a33999d91784c3c90c7973344}
+
+\begin{DoxyCompactList}\small\item\em Data is sampled on the trailing (last) edge of S\-C\-K. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__spi_ga5452e5ba102fdceebe1a579d371063f0}{spi\-\_\-init} (uint8\-\_\-t mode, uint8\-\_\-t data\-\_\-order, uint8\-\_\-t clock\-\_\-polarity, uint8\-\_\-t clock\-\_\-phase, void($\ast$callback\-\_\-function)())
+\begin{DoxyCompactList}\small\item\em Initializes the S\-P\-I driver and sets the mode for it. \end{DoxyCompactList}\item 
+void \hyperlink{group__spi_ga84796dd8cb8e0726d2ea519bfdc70db0}{spi\-\_\-send\-\_\-byte} (uint8\-\_\-t byte\-\_\-to\-\_\-send)
+\begin{DoxyCompactList}\small\item\em Sends a byte using the S\-P\-I interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Driver for communicating using the Serial Peripheral Interface (S\-P\-I) bus. 
+
+\subsection{Function Documentation}
+\hypertarget{group__spi_ga5452e5ba102fdceebe1a579d371063f0}{\index{S\-P\-I@{S\-P\-I}!spi\-\_\-init@{spi\-\_\-init}}
+\index{spi\-\_\-init@{spi\-\_\-init}!SPI@{S\-P\-I}}
+\subsubsection[{spi\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void spi\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{mode, }
+\item[{uint8\-\_\-t}]{data\-\_\-order, }
+\item[{uint8\-\_\-t}]{clock\-\_\-polarity, }
+\item[{uint8\-\_\-t}]{clock\-\_\-phase, }
+\item[{void($\ast$)()}]{callback\-\_\-function}
+\end{DoxyParamCaption}
+)}}\label{group__spi_ga5452e5ba102fdceebe1a579d371063f0}
+
+
+Initializes the S\-P\-I driver and sets the mode for it. 
+
+\begin{DoxyNote}{Note}
+Must be called before any other method can be used.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & Sets the operation mode of the S\-P\-I interface.\par
+ Valid choices are S\-P\-I\-\_\-\-M\-O\-D\-E\-\_\-\-M\-A\-S\-T\-E\-R and S\-P\-I\-\_\-\-M\-O\-D\-E\-\_\-\-S\-L\-A\-V\-E. \\
+\hline
+{\em data\-\_\-order} & Selects which bit will be transmitted first.\par
+ Valid choices are S\-P\-I\-\_\-\-D\-A\-T\-A\-\_\-\-O\-R\-D\-E\-R\-\_\-\-L\-S\-B\-\_\-\-F\-I\-R\-S\-T and S\-P\-I\-\_\-\-D\-A\-T\-A\-\_\-\-O\-R\-D\-E\-R\-\_\-\-M\-S\-B\-\_\-\-F\-I\-R\-S\-T. \\
+\hline
+{\em clock\-\_\-polarity} & Selects the output when S\-C\-K is idle.\par
+ Valid choices are S\-P\-I\-\_\-\-C\-L\-O\-C\-K\-\_\-\-P\-O\-L\-A\-R\-I\-T\-Y\-\_\-\-H\-I\-G\-H\-\_\-\-W\-H\-E\-N\-\_\-\-I\-D\-L\-E and S\-P\-I\-\_\-\-C\-L\-O\-C\-K\-\_\-\-P\-O\-L\-A\-R\-I\-T\-Y\-\_\-\-L\-O\-W\-\_\-\-W\-H\-E\-N\-\_\-\-I\-D\-L\-E. \\
+\hline
+{\em clock\-\_\-phase} & Selects when the data should be sampled.\par
+ Valid choices are S\-P\-I\-\_\-\-C\-L\-O\-C\-K\-\_\-\-P\-H\-A\-S\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-L\-E\-A\-D\-I\-N\-G and S\-P\-I\-\_\-\-C\-L\-O\-C\-K\-\_\-\-P\-H\-A\-S\-E\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-T\-R\-A\-I\-L\-I\-N\-G. \\
+\hline
+{\em $\ast$callback\-\_\-function()} & Callback function to be executed when the transfer is complete.\par
+ The Global Interrupt Enable bit in S\-R\-E\-G must be set. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__spi_ga84796dd8cb8e0726d2ea519bfdc70db0}{\index{S\-P\-I@{S\-P\-I}!spi\-\_\-send\-\_\-byte@{spi\-\_\-send\-\_\-byte}}
+\index{spi\-\_\-send\-\_\-byte@{spi\-\_\-send\-\_\-byte}!SPI@{S\-P\-I}}
+\subsubsection[{spi\-\_\-send\-\_\-byte}]{\setlength{\rightskip}{0pt plus 5cm}void spi\-\_\-send\-\_\-byte (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{byte\-\_\-to\-\_\-send}
+\end{DoxyParamCaption}
+)}}\label{group__spi_ga84796dd8cb8e0726d2ea519bfdc70db0}
+
+
+Sends a byte using the S\-P\-I interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em byte\-\_\-to\-\_\-send} & The byte to be sent. \\
+\hline
+\end{DoxyParams}

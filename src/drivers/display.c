@@ -11,8 +11,8 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-#include "drivers/display.h"
-#include "utils/bit_manipulation.h"
+#include <drivers/display.h>
+#include <utils/bit_manipulation.h>
 
 const uint8_t DISPLAY[4] = {PL0, PL1, PL2, PL3};
 const uint8_t DIGIT[10] = {0xFC, 0x60, 0xDA, 0xF2, 0x66, 0xB6, 0xBE, 0xE0, 0xFE, 0xF6};
@@ -31,27 +31,24 @@ uint8_t previous_display = -1;
 @note Must be called first, before any other method can be used.
 **/
 void display_init(){
-    // Enable needed pins as outputs.
-    DDRB |= _BV(DDB1); // SHCP
-    DDRB |= _BV(DDB2); // DS
+    // Set needed ports as output.
     DDRB |= _BV(DDB3); // MR
     DDRK |= _BV(DDK3); // STCP
-    
-    DDRL |= _BV(DDL3); // A
-    DDRL |= _BV(DDL2); // B
-    DDRL |= _BV(DDL1); // C
-    DDRL |= _BV(DDL0); // D
-    
+    DDRL |= _BV(DDL3); // Display A
+    DDRL |= _BV(DDL2); // Display B
+    DDRL |= _BV(DDL1); // Display C
+    DDRL |= _BV(DDL0); // Display D
+
     // Clear any values that we currently have in the shift
     // register and set the master reset pin to HIGH.
     PORTB &= ~_BV(PB3);
-    PORTB |= _BV(PB3);  
-    
-    // Set the source to CLK/64 (from prescaler).
-    TCCR0B |= _BV(CS01) | _BV(CS00); 
-    
+    PORTB |= _BV(PB3);
+
+    // Set the source to CLK/64 (from pre-scaler).
+    TCCR0B |= _BV(CS01) | _BV(CS00);
+
     // Enable Timer/Counter0 overflow interrupt.
-    TIMSK0 = _BV(TOIE0);
+    TIMSK0 = _BV(TOIE0);    
 }
 
 /**
@@ -76,29 +73,17 @@ void display_value(float value_to_display, uint8_t numbers_of_decimals){
     }
 }
 
-ISR(TIMER0_OVF_vect){
-    int8_t value_digit = value_by_digits[current_display];
+void _turn_display_on() {
+    // Send the value to the storage register.
+    CLOCK_PIN(PORTK, PK3);
 
-    if(value_digit != -1){
-        // Store the 8 bits for the digit into the shift register,
-        // when finished send the value to the output register.
-        for(int i = 0; i < 8; i++){
-            uint8_t bit_value = (value_digit >> i) & 0x01;
-            WRITE_BIT(PORTB, PB2, bit_value);
-            CLOCK_PIN(PORTB, PB1);
-        }
-        // Send the value from the output register
-        // to the display.
-        CLOCK_PIN(PORTK, PK3);        
+    // Turn on the current active display.
+    SET_BIT(PORTL, current_display);
 
-        // Turn on current display.
-        SET_BIT(PORTL, DISPLAY[current_display]);
-    }    
-            
     // Turn off previous display, save position
     // and move to next display.
     if(previous_display != -1){
-        CLEAR_BIT(PORTL, DISPLAY[previous_display]);        
+        CLEAR_BIT(PORTL, DISPLAY[previous_display]);
     }
     previous_display = current_display;
     if(current_display == 3){
@@ -107,4 +92,18 @@ ISR(TIMER0_OVF_vect){
     else {
         current_display++;
     }
+}
+
+ISR(TIMER0_OVF_vect){
+    uint8_t value_digit = value_by_digits[current_display];
+    if(value_digit != -1){
+        spi_init(
+            SPI_MODE_MASTER,
+            SPI_DATA_ORDER_LSB_FIRST,
+            SPI_CLOCK_POLARITY_LOW_WHEN_IDLE,
+            SPI_CLOCK_PHASE_SAMPLE_LEADING,
+            &_turn_display_on
+        );
+        spi_send_byte(value_digit);
+    }    
 }

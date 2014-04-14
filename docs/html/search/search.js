@@ -8,9 +8,9 @@
 var indexSectionsWithContent =
 {
   0: "7dirs",
-  1: "d",
-  2: "dir",
-  3: "7r"
+  1: "drs",
+  2: "dirs",
+  3: "7rs"
 };
 
 var indexSectionNames =

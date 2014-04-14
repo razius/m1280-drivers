@@ -1,5 +1,5 @@
 /**
-@file rc_servo.c112
+@file rc_servo.c
 @brief RC Servo Motor Driver.
 @author Silviu Tantos
 @defgroup rc_servo RC Servo

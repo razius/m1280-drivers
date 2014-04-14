@@ -17,12 +17,11 @@ int main(void){
     sei();
 
     while(1){
-//        float initial_value = 0.01;
-//        for(int i = 0; i < 10000; i++){
-//            display_value(initial_value, 2);
-//            initial_value += 0.01;
-//            _delay_ms(200);
-//        }
-        display_value(1234, 2);            
+        float initial_value = 0.01;
+        for(int i = 0; i < 10000; i++){
+            display_value(initial_value, 2);
+            initial_value += 0.01;
+            _delay_ms(100);
+        }
     }
 }

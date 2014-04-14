@@ -9,6 +9,8 @@
 #ifndef DISPLAY_H_
 #define DISPLAY_H_
 
+    #include <drivers/spi.h>
+
     void display_init();
     void display_value(float value_to_display, uint8_t numbers_of_decimals);
 

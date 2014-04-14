@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>M1280 Drivers: Main Page</title>
+<title>M1280 Drivers: src/drivers/spi.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,9 +36,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -57,7 +57,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-</div><!-- top -->
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,15 +77,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c718a368270b13c54d94892d20736f45.html">drivers</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">M1280 Drivers Documentation</div>  </div>
+<div class="title">spi.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+
+<p>SPI Driver.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;spi.h&quot;</code><br/>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga5452e5ba102fdceebe1a579d371063f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi.html#ga5452e5ba102fdceebe1a579d371063f0">spi_init</a> (uint8_t mode, uint8_t data_order, uint8_t clock_polarity, uint8_t clock_phase, void(*callback_function)())</td></tr>
+<tr class="memdesc:ga5452e5ba102fdceebe1a579d371063f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the SPI driver and sets the mode for it.  <a href="group__spi.html#ga5452e5ba102fdceebe1a579d371063f0">More...</a><br/></td></tr>
+<tr class="separator:ga5452e5ba102fdceebe1a579d371063f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga84796dd8cb8e0726d2ea519bfdc70db0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi.html#ga84796dd8cb8e0726d2ea519bfdc70db0">spi_send_byte</a> (uint8_t byte_to_send)</td></tr>
+<tr class="memdesc:ga84796dd8cb8e0726d2ea519bfdc70db0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a byte using the SPI interface.  <a href="group__spi.html#ga84796dd8cb8e0726d2ea519bfdc70db0">More...</a><br/></td></tr>
+<tr class="separator:ga84796dd8cb8e0726d2ea519bfdc70db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9cad97352f5ba9bbd800446131125a6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af9cad97352f5ba9bbd800446131125a6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ISR</b> (SPI_STC_vect)</td></tr>
+<tr class="separator:af9cad97352f5ba9bbd800446131125a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>SPI Driver. </p>
+<dl class="section author"><dt>Author</dt><dd>Silviu Tantos </dd></dl>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 14 2014 14:44:18 for M1280 Drivers by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 14 2014 14:44:17 for M1280 Drivers by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
