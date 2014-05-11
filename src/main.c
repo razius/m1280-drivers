@@ -9,19 +9,22 @@
 #include <avr/interrupt.h>
 #include <util/delay.h>
 
-#include "drivers/display.h"
+#include <drivers/temperature.h>
+#include <drivers/display.h>
 
 int main(void){
-    display_init();
+    DDRH |= 0xFF;
     
     sei();
+	
+	display_init();
+	temperature_init();
+
+	uint16_t temperature = 0;
 
     while(1){
-        float initial_value = 0.01;
-        for(int i = 0; i < 10000; i++){
-            display_value(initial_value, 2);
-            initial_value += 0.01;
-            _delay_ms(100);
-        }
+		temperature = temperature_read();
+		display_value(temperature, 2);
+		_delay_ms(200);			
     }
 }
