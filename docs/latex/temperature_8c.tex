@@ -6,12 +6,17 @@
 Temperature Sensor Driver.  
 
 
+{\ttfamily \#include $<$avr/io.\-h$>$}\\*
+{\ttfamily \#include $<$util//delay.\-h$>$}\\*
+{\ttfamily \#include $<$drivers/spi.\-h$>$}\\*
+{\ttfamily \#include $<$drivers/temperature.\-h$>$}\\*
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{temperature_8c_abe50380d010a126e568f9e451626f925}{void {\bfseries temperature\-\_\-read} ()}\label{temperature_8c_abe50380d010a126e568f9e451626f925}
-
-\end{DoxyCompactItemize}
+void \hyperlink{group__temperature_gabb0c1f74cbd0591c63858c57917c566e}{temperature\-\_\-init} ()
+\begin{DoxyCompactList}\small\item\em Initializes the temperature sensor driver. \end{DoxyCompactList}\item 
+int8\-\_\-t \hyperlink{group__temperature_ga3eb2c2e3259410507c204973d8f12cf0}{temperature\-\_\-read} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the current temperature. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

@@ -125,9 +125,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga5452e5ba102fdceebe1a579d371063f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi.html#ga5452e5ba102fdceebe1a579d371063f0">spi_init</a> (uint8_t mode, uint8_t data_order, uint8_t clock_polarity, uint8_t clock_phase, void(*callback_function)())</td></tr>
 <tr class="memdesc:ga5452e5ba102fdceebe1a579d371063f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the SPI driver and sets the mode for it.  <a href="#ga5452e5ba102fdceebe1a579d371063f0">More...</a><br/></td></tr>
 <tr class="separator:ga5452e5ba102fdceebe1a579d371063f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga84796dd8cb8e0726d2ea519bfdc70db0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi.html#ga84796dd8cb8e0726d2ea519bfdc70db0">spi_send_byte</a> (uint8_t byte_to_send)</td></tr>
-<tr class="memdesc:ga84796dd8cb8e0726d2ea519bfdc70db0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a byte using the SPI interface.  <a href="#ga84796dd8cb8e0726d2ea519bfdc70db0">More...</a><br/></td></tr>
-<tr class="separator:ga84796dd8cb8e0726d2ea519bfdc70db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabcc7b4823bf9adf2182f70ecd233d884"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi.html#gabcc7b4823bf9adf2182f70ecd233d884">spi_send_byte</a> (uint8_t byte_to_send)</td></tr>
+<tr class="memdesc:gabcc7b4823bf9adf2182f70ecd233d884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a byte using the SPI interface.  <a href="#gabcc7b4823bf9adf2182f70ecd233d884">More...</a><br/></td></tr>
+<tr class="separator:gabcc7b4823bf9adf2182f70ecd233d884"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Communicate using the Serial Peripheral Interface (SPI) bus. </p>
@@ -178,7 +178,7 @@ Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Must be called before any other method can be used.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mode</td><td>Sets the operation mode of the SPI interface.<br/>
+    <tr><td class="paramname">modew</td><td>Sets the operation mode of the SPI interface.<br/>
  Valid choices are SPI_MODE_MASTER and SPI_MODE_SLAVE. </td></tr>
     <tr><td class="paramname">data_order</td><td>Selects which bit will be transmitted first.<br/>
  Valid choices are SPI_DATA_ORDER_LSB_FIRST and SPI_DATA_ORDER_MSB_FIRST. </td></tr>
@@ -195,12 +195,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga84796dd8cb8e0726d2ea519bfdc70db0"></a>
+<a class="anchor" id="gabcc7b4823bf9adf2182f70ecd233d884"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void spi_send_byte </td>
+          <td class="memname">uint8_t spi_send_byte </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>byte_to_send</em></td><td>)</td>
@@ -222,7 +222,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 14 2014 15:37:27 for M1280 Drivers by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 11 2014 14:23:52 for M1280 Drivers by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

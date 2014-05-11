@@ -119,15 +119,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="group__spi.html#ga53ba425a33999d91784c3c90c7973344">   57</a></span>&#160;<span class="preprocessor">    #define SPI_CLOCK_PHASE_SAMPLE_TRAILING 1</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor"></span>    </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="group__spi.html#ga5452e5ba102fdceebe1a579d371063f0">spi_init</a>(uint8_t data_order, uint8_t mode, uint8_t clock_polarity, uint8_t clock_phase, <span class="keywordtype">void</span>(*callback_function)());</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="group__spi.html#ga84796dd8cb8e0726d2ea519bfdc70db0">spi_send_byte</a>(uint8_t byte_to_send);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    uint8_t <a class="code" href="group__spi.html#gabcc7b4823bf9adf2182f70ecd233d884">spi_send_byte</a>(uint8_t byte_to_send);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SPI_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="group__spi_html_ga5452e5ba102fdceebe1a579d371063f0"><div class="ttname"><a href="group__spi.html#ga5452e5ba102fdceebe1a579d371063f0">spi_init</a></div><div class="ttdeci">void spi_init(uint8_t data_order, uint8_t mode, uint8_t clock_polarity, uint8_t clock_phase, void(*callback_function)())</div><div class="ttdoc">Initializes the SPI driver and sets the mode for it. </div><div class="ttdef"><b>Definition:</b> spi.c:38</div></div>
-<div class="ttc" id="group__spi_html_ga84796dd8cb8e0726d2ea519bfdc70db0"><div class="ttname"><a href="group__spi.html#ga84796dd8cb8e0726d2ea519bfdc70db0">spi_send_byte</a></div><div class="ttdeci">void spi_send_byte(uint8_t byte_to_send)</div><div class="ttdoc">Sends a byte using the SPI interface. </div><div class="ttdef"><b>Definition:</b> spi.c:79</div></div>
+<div class="ttc" id="group__spi_html_gabcc7b4823bf9adf2182f70ecd233d884"><div class="ttname"><a href="group__spi.html#gabcc7b4823bf9adf2182f70ecd233d884">spi_send_byte</a></div><div class="ttdeci">uint8_t spi_send_byte(uint8_t byte_to_send)</div><div class="ttdoc">Sends a byte using the SPI interface. </div><div class="ttdef"><b>Definition:</b> spi.c:79</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 14 2014 15:37:26 for M1280 Drivers by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 11 2014 14:23:52 for M1280 Drivers by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

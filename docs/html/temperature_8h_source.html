@@ -99,13 +99,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef TEMPERATURE_H_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TEMPERATURE_H_</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">void</span> temperature_read();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* TEMPERATURE_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">        #define T72_MODE_ONE_SHOT 0x11</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span><span class="preprocessor">        #define T72_MODE_CONTINUOUS 0x00</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">        #define T72_ADDR_MANUFACTURER_ID 0x03</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span><span class="preprocessor">        #define T72_ADDR_MSB_TEMPERATURE 0x02</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span><span class="preprocessor">        #define T72_ADDR_LSB_TEMPERATURE 0x01</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span><span class="preprocessor">        #define T72_ADDR_CONTROL_READ 0x00</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor">        #define T72_ADDR_CONTROL_WRITE 0x80</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="group__temperature.html#gabb0c1f74cbd0591c63858c57917c566e">temperature_init</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    int8_t <a class="code" href="group__temperature.html#ga3eb2c2e3259410507c204973d8f12cf0">temperature_read</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* TEMPERATURE_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="group__temperature_html_ga3eb2c2e3259410507c204973d8f12cf0"><div class="ttname"><a href="group__temperature.html#ga3eb2c2e3259410507c204973d8f12cf0">temperature_read</a></div><div class="ttdeci">int8_t temperature_read()</div><div class="ttdoc">Retrieve the current temperature. </div><div class="ttdef"><b>Definition:</b> temperature.c:53</div></div>
+<div class="ttc" id="group__temperature_html_gabb0c1f74cbd0591c63858c57917c566e"><div class="ttname"><a href="group__temperature.html#gabb0c1f74cbd0591c63858c57917c566e">temperature_init</a></div><div class="ttdeci">void temperature_init()</div><div class="ttdoc">Initializes the temperature sensor driver. </div><div class="ttdef"><b>Definition:</b> temperature.c:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 14 2014 15:37:26 for M1280 Drivers by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 11 2014 14:23:52 for M1280 Drivers by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

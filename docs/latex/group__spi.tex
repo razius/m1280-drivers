@@ -38,7 +38,7 @@ Communicate using the Serial Peripheral Interface (S\-P\-I) bus.
 \item 
 void \hyperlink{group__spi_ga5452e5ba102fdceebe1a579d371063f0}{spi\-\_\-init} (uint8\-\_\-t mode, uint8\-\_\-t data\-\_\-order, uint8\-\_\-t clock\-\_\-polarity, uint8\-\_\-t clock\-\_\-phase, void($\ast$callback\-\_\-function)())
 \begin{DoxyCompactList}\small\item\em Initializes the S\-P\-I driver and sets the mode for it. \end{DoxyCompactList}\item 
-void \hyperlink{group__spi_ga84796dd8cb8e0726d2ea519bfdc70db0}{spi\-\_\-send\-\_\-byte} (uint8\-\_\-t byte\-\_\-to\-\_\-send)
+uint8\-\_\-t \hyperlink{group__spi_gabcc7b4823bf9adf2182f70ecd233d884}{spi\-\_\-send\-\_\-byte} (uint8\-\_\-t byte\-\_\-to\-\_\-send)
 \begin{DoxyCompactList}\small\item\em Sends a byte using the S\-P\-I interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -66,7 +66,7 @@ Must be called before any other method can be used.
 \end{DoxyNote}
 
 \begin{DoxyParams}{Parameters}
-{\em mode} & Sets the operation mode of the S\-P\-I interface.\par
+{\em modew} & Sets the operation mode of the S\-P\-I interface.\par
  Valid choices are S\-P\-I\-\_\-\-M\-O\-D\-E\-\_\-\-M\-A\-S\-T\-E\-R and S\-P\-I\-\_\-\-M\-O\-D\-E\-\_\-\-S\-L\-A\-V\-E. \\
 \hline
 {\em data\-\_\-order} & Selects which bit will be transmitted first.\par
@@ -84,13 +84,13 @@ Must be called before any other method can be used.
 \end{DoxyParams}
 \begin{DoxyRefDesc}{Todo}
 \item[\hyperlink{todo__todo000002}{Todo}]Add parameter to be able to change the clock rate. \end{DoxyRefDesc}
-\hypertarget{group__spi_ga84796dd8cb8e0726d2ea519bfdc70db0}{\index{S\-P\-I@{S\-P\-I}!spi\-\_\-send\-\_\-byte@{spi\-\_\-send\-\_\-byte}}
+\hypertarget{group__spi_gabcc7b4823bf9adf2182f70ecd233d884}{\index{S\-P\-I@{S\-P\-I}!spi\-\_\-send\-\_\-byte@{spi\-\_\-send\-\_\-byte}}
 \index{spi\-\_\-send\-\_\-byte@{spi\-\_\-send\-\_\-byte}!SPI@{S\-P\-I}}
-\subsubsection[{spi\-\_\-send\-\_\-byte}]{\setlength{\rightskip}{0pt plus 5cm}void spi\-\_\-send\-\_\-byte (
+\subsubsection[{spi\-\_\-send\-\_\-byte}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t spi\-\_\-send\-\_\-byte (
 \begin{DoxyParamCaption}
 \item[{uint8\-\_\-t}]{byte\-\_\-to\-\_\-send}
 \end{DoxyParamCaption}
-)}}\label{group__spi_ga84796dd8cb8e0726d2ea519bfdc70db0}
+)}}\label{group__spi_gabcc7b4823bf9adf2182f70ecd233d884}
 
 
 Sends a byte using the S\-P\-I interface. 

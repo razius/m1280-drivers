@@ -9,7 +9,7 @@ var indexSectionsWithContent =
 {
   0: "7dirst",
   1: "drst",
-  2: "dirs",
+  2: "dirst",
   3: "7rst",
   4: "t"
 };

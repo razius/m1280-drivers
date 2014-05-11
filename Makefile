@@ -44,7 +44,7 @@ clean:
 	rm -rf $(ODIR)/* $(BDIR)/*
 
 docs:
-	@echo "Here"
+	doxygen
 
 all: clean build docs program
 
