@@ -10,7 +10,7 @@
 
 #include "spi.h"
 
-static void(*_callback_function)() = 0;
+// static void(*_callback_function)() = 0;
 
 /**
 @ingroup spi
@@ -18,7 +18,7 @@ static void(*_callback_function)() = 0;
 
 @note Must be called before any other method can be used.
 
-@param mode
+@param modew
     Sets the operation mode of the SPI interface.\n
     Valid choices are SPI_MODE_MASTER and SPI_MODE_SLAVE.
 @param data_order
@@ -46,11 +46,11 @@ void spi_init(
     uint8_t has_callback_function = 0;
 
     // Save the pointer to the callback function.
-    _callback_function = callback_function;
+//    _callback_function = callback_function;
 
-    if(_callback_function){
-        has_callback_function = 1;
-    }
+//    if(_callback_function){
+//        has_callback_function = 1;
+//    }
 
     // Set needed ports as output.
     DDRB |= _BV(DDB2); // MOSI
@@ -76,12 +76,25 @@ void spi_init(
 
 @param byte_to_send The byte to be sent.
 **/
-void spi_send_byte(uint8_t byte_to_send){
+uint8_t spi_send_byte(uint8_t byte_to_send){
+	uint8_t received_byte;
+
+	cli();
+
     SPDR = byte_to_send;
+
+	// Wait for the transmission to complete.
+	while(!((SPSR) & _BV(SPIF))){}
+		
+	received_byte = SPDR;
+		
+	sei();
+	
+	return received_byte;		
 }
 
 ISR(SPI_STC_vect){
-    if(_callback_function){
-        _callback_function();        
-    }
+//    if(_callback_function){
+//        _callback_function();        
+//    }
 }

@@ -57,6 +57,6 @@
     #define SPI_CLOCK_PHASE_SAMPLE_TRAILING 1
     
     void spi_init(uint8_t data_order, uint8_t mode, uint8_t clock_polarity, uint8_t clock_phase, void(*callback_function)());
-    void spi_send_byte(uint8_t byte_to_send);
+    uint8_t spi_send_byte(uint8_t byte_to_send);
 
 #endif /* SPI_H_ */
