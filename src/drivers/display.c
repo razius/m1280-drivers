@@ -75,24 +75,23 @@ void display_value(float value_to_display, uint8_t numbers_of_decimals){
 }
 
 void _turn_display_on() {
+    // Turn off previous display, save position
+    // and move to next display.
+	if(current_display == 0){
+		CLEAR_BIT(PORTL, DISPLAY[3]);
+	}
+	else {
+		CLEAR_BIT(PORTL, DISPLAY[current_display-1]);		
+	}
+
     // Send the value to the storage register.
     CLOCK_PIN(PORTK, PK3);
 
     // Turn on the current active display.
     SET_BIT(PORTL, current_display);
 
-    // Turn off previous display, save position
-    // and move to next display.
-    if(previous_display != -1){
-        CLEAR_BIT(PORTL, DISPLAY[previous_display]);
-    }
-    previous_display = current_display;
-    if(current_display == 3){
-        current_display = 0;
-    }
-    else {
-        current_display++;
-    }
+	current_display++;
+	current_display = current_display % 4;
 }
 
 ISR(TIMER0_OVF_vect){
@@ -103,8 +102,9 @@ ISR(TIMER0_OVF_vect){
             SPI_DATA_ORDER_LSB_FIRST,
             SPI_CLOCK_POLARITY_LOW_WHEN_IDLE,
             SPI_CLOCK_PHASE_SAMPLE_LEADING,
-            &_turn_display_on
+            0
         );
         spi_send_byte(value_digit);
+		_turn_display_on();
     }    
 }
