@@ -82,8 +82,14 @@ float temperature_read(){
     PORTK &= ~_BV(PK5);
 
 	// Convert values to a temperature value.
-    // TODO: Check if it handles negative values.
-    temperature = ((msb << 2) | (lsb >> 6)) * 0.25;	
+    int16_t temp = ((msb << 2) | (lsb >> 6));
+    if(msb >> 7){
+        temp &= ~(1 << 9);
+        temperature = -128 + (temp * 0.25);
+    }
+    else {
+        temperature = temp * 0.25;
+    }
 
 	return temperature;
 }
