@@ -20,7 +20,7 @@ int main(void){
 	display_init();
 	temperature_init();
 
-	uint16_t temperature = 0;
+	double temperature = 0;
 
     while(1){
 		temperature = temperature_read();

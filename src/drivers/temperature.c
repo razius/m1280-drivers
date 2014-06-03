@@ -14,6 +14,17 @@
 #include <drivers/spi.h>
 #include <drivers/temperature.h>
 
+#define T72_MODE_ONE_SHOT 0x11
+#define T72_MODE_CONTINUOUS 0x00
+
+#define T72_ADDR_MANUFACTURER_ID 0x03
+#define T72_ADDR_MSB_TEMPERATURE 0x02
+#define T72_ADDR_LSB_TEMPERATURE 0x01
+#define T72_ADDR_CONTROL_READ 0x00
+#define T72_ADDR_CONTROL_WRITE 0x80
+
+static double temperature = 0;
+
 /**
 @ingroup temperature
 @brief Initializes the temperature sensor driver.
@@ -50,7 +61,7 @@ void temperature_init(){
 
 @return The current temperature reading.
 **/
-int8_t temperature_read(){
+float temperature_read(){
     // Initialize SPI bus.
 	spi_init(
 		SPI_MODE_MASTER,
@@ -64,13 +75,15 @@ int8_t temperature_read(){
     PORTK |= _BV(PK5);
 
     spi_send_byte(T72_ADDR_MSB_TEMPERATURE);
-	int8_t msb = spi_send_byte(0x00);	
+	uint8_t msb = spi_send_byte(0x00);	
 	uint8_t lsb = spi_send_byte(0x00);
 	
     // Deselect TC72 chip as a slave device.
     PORTK &= ~_BV(PK5);
 
 	// Convert values to a temperature value.
-	
-	return msb;
+    // TODO: Check if it handles negative values.
+    temperature = ((msb << 2) | (lsb >> 6)) * 0.25;	
+
+	return temperature;
 }

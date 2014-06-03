@@ -5,7 +5,6 @@
  *  Author: razius
  */ 
 
-
 #ifndef SPI_H_
 #define SPI_H_
 

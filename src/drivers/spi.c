@@ -83,7 +83,7 @@ uint8_t spi_send_byte(uint8_t byte_to_send){
 
     SPDR = byte_to_send;
 
-	// Wait for the transmission to complete.23
+	// Wait for the transmission to complete.
 	while(!((SPSR) & _BV(SPIF))){}
 		
 	received_byte = SPDR;
