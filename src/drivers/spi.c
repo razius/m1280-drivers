@@ -79,7 +79,9 @@ void spi_init(
 uint8_t spi_send_byte(uint8_t byte_to_send){
 	uint8_t received_byte;
 
-	cli();
+    // Store current state for SREG and disable interrupts.
+    uint8_t sreg = SREG;
+    cli();
 
     SPDR = byte_to_send;
 
@@ -87,8 +89,9 @@ uint8_t spi_send_byte(uint8_t byte_to_send){
 	while(!((SPSR) & _BV(SPIF))){}
 		
 	received_byte = SPDR;
-		
-	sei();
+	
+    // Restore SREG.
+	SREG = sreg;
 	
 	return received_byte;		
 }

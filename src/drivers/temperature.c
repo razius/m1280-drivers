@@ -62,6 +62,9 @@ void temperature_init(){
 @return The current temperature reading.
 **/
 float temperature_read(){
+    uint8_t sreg = SREG;
+    cli();
+
     // Initialize SPI bus.
 	spi_init(
 		SPI_MODE_MASTER,
@@ -80,6 +83,8 @@ float temperature_read(){
 	
     // Deselect TC72 chip as a slave device.
     PORTK &= ~_BV(PK5);
+
+    SREG = sreg;
 
 	// Convert values to a temperature value.
     int16_t temp = ((msb << 2) | (lsb >> 6));
